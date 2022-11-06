@@ -3,9 +3,10 @@ import Input from './Input';
 import GuessList from './GuessList';
 import Keyboard from './Keyboard';
 
-import './Wordle.css';
 import words from './words';
 import compareWords from './compareWords';
+
+import '../styles/style.css';
 
 const Wordle = () => {
     const wordList = words;
@@ -16,13 +17,13 @@ const Wordle = () => {
 
     useEffect(() => {
         setWordle(wordList[Math.floor(Math.random() * wordList.length)].split(''));
-    }, [])
+    }, []);
 
     useEffect(() => {
         if (guessList.length) {
             compareWords(wordle, guessList[guessList.length - 1], guessNumber, setGuessNumber, setResults);
         }
-    }, [guessList])
+    }, [guessList]);
 
    return (
         <>
@@ -38,7 +39,7 @@ const Wordle = () => {
             <GuessList guessList={guessList} />
             <Keyboard />
         </>
-   ) 
-}
+   );
+};
 
 export default Wordle;

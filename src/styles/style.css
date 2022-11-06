@@ -1,0 +1,104 @@
+body {
+  color: #212121;
+}
+
+body,
+button,
+input {
+  font-family: monospace;
+}
+
+form {
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+}
+form input {
+  width: 33%;
+  min-width: 300px;
+  font-size: 3rem;
+  text-align: center;
+  border-radius: 25px;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px;
+  margin: 15px 10px 10px;
+  border-radius: 25px;
+  background: none;
+  border: 2px solid #212121;
+  font-size: 1rem;
+  font-weight: 900;
+}
+button:disabled {
+  color: #959595;
+  border: 2px solid #959595;
+}
+button:not([disabled]):hover {
+  color: #fff;
+  background-color: #212121;
+}
+
+.center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.answer {
+  margin: 10px;
+  flex-direction: row;
+}
+
+.refresh {
+  background: none;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.word {
+  display: flex;
+  flex-direction: row;
+}
+.word .letter {
+  height: 40px;
+  width: 40px;
+  margin: 10px 10px 0 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: monospace;
+  font-size: 1.8rem;
+  border: 1px solid #959595;
+  border-radius: 10px;
+}
+
+.alphabetList {
+  margin-top: 20px;
+}
+.alphabetList .alphabet {
+  display: inline-block;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.noMatch:not(.inWord):not(.match) {
+  color: #e12020;
+}
+
+.inWord:not(.match) {
+  background-color: #fcd15b;
+}
+
+.match {
+  background-color: #54c754;
+}/*# sourceMappingURL=style.css.map */

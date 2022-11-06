@@ -1,0 +1,115 @@
+$lightGray: #959595;
+$green: #54c754;
+$yellow: #fcd15b;
+$red: #e12020;
+$text: #212121;
+
+body {
+    color: $text;
+}
+
+body,
+button,
+input {
+    font-family: monospace;
+}
+
+form {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+
+    input {
+        width: 33%;
+        min-width: 300px;
+        font-size: 3rem;
+        text-align: center;
+        border-radius: 25px;
+    }
+}
+
+button {
+    cursor: pointer;
+    padding: 10px;
+    margin: 15px 10px 10px;
+    border-radius: 25px;
+
+    background: none;
+    border: 2px solid $text;
+    font-size: 1rem;
+    font-weight: 900;
+    &:disabled {
+        color:$lightGray;
+        border: 2px solid $lightGray;
+    }
+    &:not([disabled]):hover {
+        color: #fff;
+        background-color: $text;
+    }
+}
+
+.center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.answer {
+    margin: 10px;
+    flex-direction: row;
+}
+
+.refresh {
+    background: none;
+    border-radius: 25px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.word {
+    display: flex;
+    flex-direction: row;
+    .letter {
+        height: 40px;
+        width: 40px;
+        margin: 10px 10px 0 0;
+    
+        flex-direction: row;
+        flex-wrap: wrap;
+    
+        font-family: monospace;
+        font-size: 1.8rem;
+        border: 1px solid $lightGray;
+        border-radius: 10px;
+    }
+}
+
+.alphabetList {
+    margin-top: 20px;
+    .alphabet {
+        display: inline-block;
+        margin: 5px;
+        border-radius: 5px;
+    }
+}
+
+// Colors
+.noMatch:not(.inWord):not(.match) {
+    color: $red;
+}
+
+.inWord:not(.match) {
+    background-color: $yellow;
+}
+
+.match {
+    background-color: $green;
+}

@@ -13,7 +13,7 @@ const Keyboard = () => {
                 )
             })}
         </div>
-    )
+    );
 };
 
 export default Keyboard;

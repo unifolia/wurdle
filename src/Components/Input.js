@@ -4,10 +4,18 @@ const Input = ({ guessNumber, setGuessNumber, updateGuessList }) => {
 
     const submitGuess = e => {
         e.preventDefault();
-        const currentGuess = e.target[0].value.toLowerCase().split('');
-        updateGuessList(guessList => [...guessList, currentGuess]);
-        setGuessNumber(guessNumber + 1);
-    }
+        const formInput = e.target[0];
+
+        if (formInput.value) {
+            const currentGuess = formInput.value.toLowerCase().split('');
+            
+            updateGuessList(guessList => [...guessList, currentGuess]);
+            setGuessNumber(guessNumber + 1);
+    
+            e.target.reset();
+            formInput.focus();
+        };
+    };
 
     return (
         <form onSubmit={submitGuess} className="center">
@@ -16,7 +24,7 @@ const Input = ({ guessNumber, setGuessNumber, updateGuessList }) => {
                 Submit :)
             </button>
         </form>
-    )
-}
+    );
+};
 
 export default Input;

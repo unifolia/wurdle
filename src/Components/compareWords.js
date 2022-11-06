@@ -1,5 +1,4 @@
 const compareWords = (wordle, currentGuess, guessNumber, setGuessNumber, setResults) => {
-    const guessId = (guessNumber - 1).toString();
     
     const addColorClass = (id, matchType, letter) => {
         document.getElementById(id).classList.add(matchType);
@@ -7,19 +6,21 @@ const compareWords = (wordle, currentGuess, guessNumber, setGuessNumber, setResu
     };
 
     currentGuess.forEach((letter, i) => {
+        const guessId = (guessNumber - 1).toString() + i + letter;
+
         if (letter === wordle[i]) {
-            addColorClass(guessId + i + letter, 'match', letter);
+            addColorClass(guessId, 'match', letter);
         } else if (wordle.includes(letter)) {
-            addColorClass(guessId + i + letter, 'inWord', letter);
+            addColorClass(guessId, 'inWord', letter);
         } else {
-            addColorClass(guessId + i + letter, 'noMatch', letter);
-        }
+            addColorClass(guessId, 'noMatch', letter);
+        };
     });
 
     if (currentGuess.length > 0 && currentGuess.length === wordle.length && currentGuess.every((v, i) => v === wordle[i])) {
         setGuessNumber(5);
         setResults(true);
-    }
+    };
 };
 
 export default compareWords;

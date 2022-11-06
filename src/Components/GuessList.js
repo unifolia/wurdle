@@ -23,7 +23,7 @@ const GuessList = ({ guessList }) => {
                 )
             })}
         </main>
-    )
+    );
 };
 
 export default GuessList
