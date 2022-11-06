@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 const Input = ({ guessNumber, setGuessNumber, updateGuessList, setCurrentGuess }) => {
+    
     const submitGuess = e => {
         e.preventDefault();
-        const currentGuess = e.target[0].value.split('');
+        const currentGuess = e.target[0].value.toLowerCase().split('');
 
         setCurrentGuess(currentGuess);
         updateGuessList(guessList => [...guessList, currentGuess]);
@@ -14,7 +15,7 @@ const Input = ({ guessNumber, setGuessNumber, updateGuessList, setCurrentGuess }
         <form onSubmit={submitGuess}>
             <input type="text" maxLength="5" />
             <button disabled={guessNumber >= 5 ? true : false}>
-                Submit
+                Submit :)
             </button>
         </form>
     )

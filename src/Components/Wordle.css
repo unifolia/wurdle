@@ -1,7 +1,99 @@
-.match {
-    background-color: green;
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+input {
+    width: 33%;
+    font-size: 3rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.answer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(155, 68, 127);
+}
+
+.refresh {
+    background: none;
+    border: 2px solid rgb(155, 68, 127);
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.refresh:hover {
+    color: white;
+    background-color: rgb(155, 68, 127);
+}
+
+.match,
+.inWord.match {
+    background-color: rgb(49, 183, 49);
 }
 
 .inWord {
-    background-color: orange;
+    background-color: rgb(252, 239, 91);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 25px;
+}
+
+.word {
+    display: flex;
+    flex-direction: row;
+}
+
+.letter {
+    height: 50px;
+    width: 50px;
+    margin: 10px 10px 0 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    font-family: monospace;
+    font-size: 2rem;
+    text-align: center;
+    border: 1px solid rgb(149, 149, 149);
+    border-radius: 10px;
+}
+
+.alphabetList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+.alphabet {
+    display: inline-block;
+    margin: 5px;
+    border-radius: 5px;
 }

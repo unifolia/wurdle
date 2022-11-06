@@ -2,12 +2,12 @@ import React from "react";
 
 const GuessList = ({ guessList }) => {
     return (
-        <>
+        <main>
             {guessList.map((guess, guessNumber) => {
                 const guessId = guessNumber.toString();
                 
                 return (
-                    <div key={`guess${guessNumber}`}>
+                    <div key={`guess${guessNumber}`} className="word">
                         {guess.map((letter, letterNumber) => {
                             return (
                                 <span 
@@ -22,7 +22,7 @@ const GuessList = ({ guessList }) => {
                     </div>
                 )
             })}
-        </>
+        </main>
     )
 };
 
