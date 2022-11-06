@@ -10,24 +10,23 @@ import compareWords from './compareWords';
 const Wordle = () => {
     const wordList = words;
     const [wordle, setWordle] = useState([]);
-    const [currentGuess, setCurrentGuess] = useState([]);
     const [guessList, updateGuessList] = useState([]);
     const [guessNumber, setGuessNumber] = useState(0);
     const [win, setResults] = useState(false);
 
-    // Set Wordle
     useEffect(() => {
         setWordle(wordList[Math.floor(Math.random() * wordList.length)].split(''));
     }, [])
 
-    // Compare guess to Wordle
     useEffect(() => {
-        compareWords(wordle, currentGuess, guessNumber, setGuessNumber, setResults);
+        if (guessList.length) {
+            compareWords(wordle, guessList[guessList.length - 1], guessNumber, setGuessNumber, setResults);
+        }
     }, [guessList])
 
    return (
         <>
-            <Input guessNumber={guessNumber} setGuessNumber={setGuessNumber} updateGuessList={updateGuessList} setCurrentGuess={setCurrentGuess}/>
+            <Input guessNumber={guessNumber} setGuessNumber={setGuessNumber} updateGuessList={updateGuessList}/>
             {win === true && <h2 className="center">You win :)</h2>}
 
             {guessNumber >= 5 && 

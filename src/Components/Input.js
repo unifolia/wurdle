@@ -1,12 +1,10 @@
 import React from "react";
 
-const Input = ({ guessNumber, setGuessNumber, updateGuessList, setCurrentGuess }) => {
+const Input = ({ guessNumber, setGuessNumber, updateGuessList }) => {
 
     const submitGuess = e => {
         e.preventDefault();
         const currentGuess = e.target[0].value.toLowerCase().split('');
-
-        setCurrentGuess(currentGuess);
         updateGuessList(guessList => [...guessList, currentGuess]);
         setGuessNumber(guessNumber + 1);
     }

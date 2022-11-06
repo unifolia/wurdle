@@ -2,13 +2,8 @@ const compareWords = (wordle, currentGuess, guessNumber, setGuessNumber, setResu
     const guessId = (guessNumber - 1).toString();
     
     const addColorClass = (id, matchType, letter) => {
-        if (document.getElementById(id)) {
-            document.getElementById(id).classList.add(matchType);
-        }
-
-        if (document.getElementById(`${letter}`)) {
-            document.getElementById(`${letter}`).classList.add(matchType);
-        };
+        document.getElementById(id).classList.add(matchType);
+        document.getElementById(`${letter}`).classList.add(matchType);
     };
 
     currentGuess.forEach((letter, i) => {
