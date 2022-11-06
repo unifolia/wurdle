@@ -20,7 +20,7 @@ const Input = ({ guessNumber, setGuessNumber, updateGuessList }) => {
     return (
         <form onSubmit={submitGuess} className="center">
             <input type="text" maxLength="5" pattern="[A-Za-z]+" title="Please use letters"/>
-            <button disabled={guessNumber >= 5 ? true : false}>
+            <button disabled={guessNumber >= 6 ? true : false}>
                 Submit :)
             </button>
         </form>
