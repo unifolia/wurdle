@@ -22,7 +22,8 @@ const Wordle = () => {
 
     // Compare guess to Wordle
     useEffect(() => {
-        compareWords(wordle, currentGuess, guessNumber, setResults);
+        console.log(wordle);
+        compareWords(wordle, currentGuess, guessNumber, setGuessNumber, setResults);
     }, [guessList])
 
    return (
@@ -31,7 +32,7 @@ const Wordle = () => {
             {win === true && <h2 className="center">You win :)</h2>}
 
             {guessNumber >= 5 && 
-                <h1 className='answer'>The word was ~ {wordle.join('')} ~ 
+                <h1 className='answer center'>The word was ~ {wordle.join('')} ~ 
                     <button onClick={() => window.location.reload()} className="refresh">
                         refresh 🤹
                     </button>

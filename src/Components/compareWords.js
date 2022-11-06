@@ -1,4 +1,4 @@
-const compareWords = (wordle, currentGuess, guessNumber, setResults) => {
+const compareWords = (wordle, currentGuess, guessNumber, setGuessNumber, setResults) => {
     const guessId = (guessNumber - 1).toString();
     
     const addColorClass = (id, matchType, letter) => {
@@ -20,6 +20,7 @@ const compareWords = (wordle, currentGuess, guessNumber, setResults) => {
     });
 
     if (currentGuess.length > 0 && currentGuess.length === wordle.length && currentGuess.every((v, i) => v === wordle[i])) {
+        setGuessNumber(5);
         setResults(true);
     }
 };

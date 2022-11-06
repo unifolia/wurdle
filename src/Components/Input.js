@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Input = ({ guessNumber, setGuessNumber, updateGuessList, setCurrentGuess }) => {
-    
+
     const submitGuess = e => {
         e.preventDefault();
         const currentGuess = e.target[0].value.toLowerCase().split('');
@@ -12,7 +12,7 @@ const Input = ({ guessNumber, setGuessNumber, updateGuessList, setCurrentGuess }
     }
 
     return (
-        <form onSubmit={submitGuess}>
+        <form onSubmit={submitGuess} className="center">
             <input type="text" maxLength="5" />
             <button disabled={guessNumber >= 5 ? true : false}>
                 Submit :)

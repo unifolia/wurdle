@@ -6,7 +6,7 @@ const Keyboard = () => {
     });
 
     return (
-        <div className="alphabetList">
+        <div className="alphabetList center">
             {alphabet.map(letter => {
                 return (
                     <span key={letter} id={letter} className="alphabet">{letter}</span>

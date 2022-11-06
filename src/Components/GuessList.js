@@ -13,7 +13,7 @@ const GuessList = ({ guessList }) => {
                                 <span 
                                     key={guessId + letterNumber + letter} 
                                     id={guessId + letterNumber + letter} 
-                                    className="letter"
+                                    className="letter center"
                                 >
                                     {letter}
                                 </span>
