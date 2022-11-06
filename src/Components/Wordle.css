@@ -1,4 +1,6 @@
-body {
+body,
+button,
+input {
     font-family: monospace;
 }
 
@@ -10,14 +12,32 @@ form {
 
 input {
     width: 33%;
+    min-width: 300px;
     font-size: 3rem;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 button {
-    margin-top: 10px;
     cursor: pointer;
+    padding: 10px;
+    margin: 15px 0 10px;
+    border-radius: 25px;
+
+    background: none;
+    border: 2px solid black;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+button:disabled {
+    color:rgb(149, 149, 149);
+    border: 2px solid rgb(149, 149, 149);
+}
+
+button:not([disabled]):hover {
+    color: white;
+    background-color: black;
 }
 
 .center {
@@ -30,22 +50,14 @@ button {
 
 .answer {
     flex-direction: row;
-    color: rgb(155, 68, 127);
 }
 
 .refresh {
     background: none;
-    border: 2px solid rgb(155, 68, 127);
     border-radius: 25px;
     padding: 10px;
-    margin: 10px;
     font-size: 1.5rem;
     font-weight: 900;
-}
-
-.refresh:hover {
-    color: white;
-    background-color: rgb(155, 68, 127);
 }
 
 .match,
@@ -57,12 +69,14 @@ button {
     background-color: rgb(252, 239, 91);
 }
 
+.noMatch {
+    color: red;
+}
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    margin-top: 25px;
 }
 
 .word {
@@ -71,21 +85,21 @@ main {
 }
 
 .letter {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     margin: 10px 10px 0 0;
 
     flex-direction: row;
     flex-wrap: wrap;
 
     font-family: monospace;
-    font-size: 2rem;
+    font-size: 1.8rem;
     border: 1px solid rgb(149, 149, 149);
     border-radius: 10px;
 }
 
 .alphabetList {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .alphabet {

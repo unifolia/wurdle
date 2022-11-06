@@ -11,7 +11,9 @@ const compareWords = (wordle, currentGuess, guessNumber, setGuessNumber, setResu
             addColorClass(guessId + i + letter, 'match', letter);
         } else if (wordle.includes(letter)) {
             addColorClass(guessId + i + letter, 'inWord', letter);
-        };
+        } else {
+            addColorClass(guessId + i + letter, 'noMatch', letter);
+        }
     });
 
     if (currentGuess.length > 0 && currentGuess.length === wordle.length && currentGuess.every((v, i) => v === wordle[i])) {
