@@ -27,15 +27,17 @@ const Wordle = () => {
 
    return (
         <>
+            <h1 className='center'>wurdle</h1>
+
             <Input guessNumber={guessNumber} setGuessNumber={setGuessNumber} updateGuessList={updateGuessList}/>
             {win === true && <h2 className="center">You win :)</h2>}
 
             {guessNumber >= 5 && 
-                <h1 className='answer center'>The word was ~ {wordle.join('')} ~ 
+                <h2 className='answer center'>The word was ~ {wordle.join('')} ~ 
                     <button onClick={() => window.location.reload()} className="refresh">
                         refresh 🤹
                     </button>
-                </h1>}
+                </h2>}
             <GuessList guessList={guessList} />
             <Keyboard />
         </>
