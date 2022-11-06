@@ -13,6 +13,7 @@ const Wordle = () => {
     const [currentGuess, setCurrentGuess] = useState([]);
     const [guessList, updateGuessList] = useState([]);
     const [guessNumber, setGuessNumber] = useState(0);
+    const [win, setResults] = useState(false);
 
     // Set Wordle
     useEffect(() => {
@@ -21,20 +22,20 @@ const Wordle = () => {
 
     // Compare guess to Wordle
     useEffect(() => {
-        compareWords(wordle, currentGuess, guessNumber);
+        compareWords(wordle, currentGuess, guessNumber, setResults);
     }, [guessList])
 
    return (
         <>
             <Input guessNumber={guessNumber} setGuessNumber={setGuessNumber} updateGuessList={updateGuessList} setCurrentGuess={setCurrentGuess}/>
-            {
-                guessNumber >= 5 && 
+            {win === true && <h2 className="center">You win :)</h2>}
+
+            {guessNumber >= 5 && 
                 <h1 className='answer'>The word was ~ {wordle.join('')} ~ 
                     <button onClick={() => window.location.reload()} className="refresh">
                         refresh 🤹
                     </button>
-                </h1>
-            }
+                </h1>}
             <GuessList guessList={guessList} />
             <Keyboard />
         </>
