@@ -18,7 +18,7 @@ const compareWords = (wordle, currentGuess, guessNumber, setGuessNumber, setResu
     });
 
     if (currentGuess.length > 0 && currentGuess.length === wordle.length && currentGuess.every((v, i) => v === wordle[i])) {
-        setGuessNumber(5);
+        setGuessNumber(6);
         setResults(true);
     };
 };

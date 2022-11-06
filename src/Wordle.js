@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Input from './Input';
-import GuessList from './GuessList';
-import Keyboard from './Keyboard';
+import Input from './Components/Input';
+import GuessList from './Components/GuessList';
+import Keyboard from './Components/Keyboard';
 
-import words from './words';
-import compareWords from './compareWords';
+import words from './Components/words';
+import compareWords from './Components/compareWords';
 
-import '../styles/style.css';
+import './styles/style.css';
 
 const Wordle = () => {
     const wordList = words;
@@ -32,7 +32,7 @@ const Wordle = () => {
             <Input guessNumber={guessNumber} setGuessNumber={setGuessNumber} updateGuessList={updateGuessList}/>
             {win === true && <h2 className="center">You win :)</h2>}
 
-            {guessNumber >= 5 && 
+            {guessNumber >= 6 && 
                 <h2 className='answer center'>The word was ~ {wordle.join('')} ~ 
                     <button onClick={() => window.location.reload()} className="refresh">
                         refresh 🤹
