@@ -1,5 +1,6 @@
 {
   "name": "wurdle",
+  "homepage": "https://jameslewis.io/wurdle",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

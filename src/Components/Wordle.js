@@ -22,7 +22,6 @@ const Wordle = () => {
 
     // Compare guess to Wordle
     useEffect(() => {
-        console.log(wordle);
         compareWords(wordle, currentGuess, guessNumber, setGuessNumber, setResults);
     }, [guessList])
 
