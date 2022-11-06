@@ -35,7 +35,7 @@ const Wordle = () => {
             {guessNumber >= 6 && 
                 <h2 className='answer center'>The word was ~ {wordle.join('')} ~ 
                     <button onClick={() => window.location.reload()} className="refresh">
-                        refresh 🤹
+                        refresh 🔄
                     </button>
                 </h2>}
             <GuessList guessList={guessList} />
